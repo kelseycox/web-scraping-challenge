@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" style="color: orangered;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title style="font-weight: bolder;">Mission to Mars</title>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
+</head>
+
+
+<body>
+    <div class="container-fluid">
+      <div class="jumbotron text-center">
+        <h1>Mission to Mars</h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+      </div>
+        <h2 style="font-weight: bolder;">The Latest News about Mars</h2>
+        <h5 style="font-weight: bolder;">{{mars.mars_news_title}}</h5>
+        <p>{{mars.mars_news_paragraph}}</p>
+
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
+                    <h2 style="font-weight: bolder;" >Featured Mars Image</h2>
+                        <img src="{{mars.featured_image_url}}" alt="Images of Mars" style="width: 100%;">
+                </div>
+                        
+                        </div>
+                    </div>
+                        <div class="card-body" style="width: 100%">
+                            <h4 style="font-weight: bold" class="card-title">Facts about Mars</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">{{mars.mars_facts| safe}}</h6>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
+<br>    
+
+        <h1 style="text-align: center;">Mars Hemispheres</h1>
+        <hr>
+<br>
+
+  {% for picture in mars.Mars_hemispheres %}
+    <div style="padding-left: 25%;padding-right: 20%;">
+        
+                <div class="card col-lg-6" style="align-content: center; padding-bottom: 15px;" >
+                    <div class="col-lg-8 col-md-6" style="border: solid black 1px; ; text-align: center;">
+                        <img src="{{picture.spheres_image_URL}}"  width="200" height="200" alt="Mars Image" >
+                        <div class="card-body" >
+                            <p style="font-weight: bolder; padding-top: 15px; font-size: 12px;" class="card-text"> {{ picture.Title }}
+                        </div>
+                    </div> 
+                </div>
+        </div>
+    </div>
+
+  {% endfor %}
+    
+</body>
+</html>
