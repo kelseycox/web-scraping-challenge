@@ -20,8 +20,8 @@
         <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
       </div>
         <h2 style="font-weight: bolder;">The Latest News about Mars</h2>
-        <h5 style="font-weight: bolder;">{{mars.mars_news_title}}</h5>
-        <p>{{mars.mars_news_paragraph}}</p>
+        <h5 style="font-weight: bolder;">{{mars.news_title}}</h5>
+        <p>{{mars.news_paragraph}}</p>
 
             <div class="row">
                 <div class="col-lg-8 col-md-8">
@@ -48,12 +48,12 @@
         <hr>
 <br>
 
-  {% for picture in mars.Mars_hemispheres %}
+  {% for picture in mars.spheres_image_url %}
     <div style="padding-left: 25%;padding-right: 20%;">
         
                 <div class="card col-lg-6" style="align-content: center; padding-bottom: 15px;" >
                     <div class="col-lg-8 col-md-6" style="border: solid black 1px; ; text-align: center;">
-                        <img src="{{picture.spheres_image_URL}}"  width="200" height="200" alt="Mars Image" >
+                        <img src="{{picture.spheres_image_url}}"  width="200" height="200" alt="Mars Image" >
                         <div class="card-body" >
                             <p style="font-weight: bolder; padding-top: 15px; font-size: 12px;" class="card-text"> {{ picture.Title }}
                         </div>
